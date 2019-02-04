@@ -7,7 +7,7 @@ It is the field that concerned with the **automatic discovery** of regularities 
 Ways for the automatic discovery for the regularities:
 
 * Handcrafted rules.
-* Huristics
+* Heuristics
 * Machine Learning
 * ... etc
 
@@ -94,6 +94,21 @@ $$
 
   * **Continuous**:
 
+  * **Intuition**:
+  In layman's terms, an Expectation is the sum of all the probabilities occurring multiplied by their respective values, which ends up equating to the system's arithmetic mean.
+
+  If we were to take the example of a 6-sided die roll, calculating the expected value would work as follows:
+    Expected Value for Y = SumForAllValuesOfY((value of Y) * (probability of Y occuring))
+    Hence E = 1(1/6) + 2(2/6) + 3(3/6) + 4(4/6) = 5(5/6) + 6(6/6) = 3.5
+
+  What this means is that if we had enough time and patience to roll a dice for all eternity, add up the values of all the dice rolls, and divide it by the number of times we threw the dice, 
+  it would yield 3.5 (the average value across all throws).
+
+  Thus the expectation of a system is the system's mean.
+
+  Sidenote: It is worth noting that in the case of a system with continuous variables, one has to integrate over the possible values, instead of summing over them.
+
+  
 
 $$
 E[f]=\int_x{P(X=x)f(X=x)}
@@ -122,6 +137,9 @@ $$
   \end{align*}
   $$
 
+  * **Intuition**:
+    The variance of a system shows how "spread out" a system is, and can be thought of as the average distance from the system's expected value. The higher a system's variance, the more spread out it's values are,
+    and the further it strays from the expected value. Square rooting the variance of a system yields the system's standard deviation.
 
 * **Covariance**
   $$
@@ -137,5 +155,10 @@ $$
   &=E_{x,y}[XY^T]-E[X]E[Y^T]
   \end{align*}
   $$
+
+  * **Intuition**:
+  Covariance is a measure of how much two random variables vary together. It’s similar to variance, but where variance tells you how a single variable varies, covariance tells you how two variables vary together.
+  Scaling their covariance by the product of their standard deviations yields their correlation coeefficient, which can be thought of as a measure of the strength of the relationship between the two variables.
+
 
 
